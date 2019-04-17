@@ -25,7 +25,10 @@ This extension contributes the following settings:
 
 Users appreciate release notes as you update your extension.
 
-### 1.0.0
+### 0.0.2
+give the option choice for translating.
+
+### 0.0.1
 
 Initial release of ...
 

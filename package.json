@@ -1,8 +1,8 @@
 {
 	"name": "wordcount",
 	"displayName": "wordcount",
-	"description": "just a tool for counting words.",
-	"version": "0.0.1",
+	"description": "Just a tool for counting words and translate selected text.",
+	"version": "0.0.2",
 	"publisher": "guoruibiao",
 	"license": "MIT",
 	"icon": "favicon.ico",
@@ -41,7 +41,7 @@
 		},
 		"keybindings": [
 			{
-				"command": "extension.remindMe",
+				"command": "extension.wordCount",
 				"key": "ctrl+shift+,",
 				"mac": "ctrl+shift+,"
 			}
