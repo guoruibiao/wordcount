@@ -1,5 +1,5 @@
 # wordcount
-TODO: making a gif show.
+![demonstration-show](/demonstration.gif)
 
 ## Features
 show word number especially for Chinese, and translate selected text whether it's Chinese or english.
