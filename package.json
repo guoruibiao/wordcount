@@ -16,6 +16,10 @@
 		"onLanguage:markdown",
 		"onCommand:extension.wordCount"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/guoruibiao/wordcount"
+	  },
 	"main": "./out/extension",
 	"contributes": {
 		"commands": [

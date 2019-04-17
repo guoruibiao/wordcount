@@ -1,9 +1,11 @@
 'use strict';
 import * as vscode from 'vscode';
 import * as WebRequest from 'web-request';
+import { isNumber } from 'util';
 /** reference from: 
     wordcount: https://github.com/ycjcl868/vscode-wordcount
-    webrequest: https://www.npmjs.com/package/web-request
+	webrequest: https://www.npmjs.com/package/web-request
+	publish: https://www.cnblogs.com/liuxianan/p/vscode-plugin-publish.html
 **/
 
 export function activate(context : vscode.ExtensionContext) {
@@ -90,7 +92,7 @@ class WordCounter {
 		// 获取选中的文本
 		let wcconfig = vscode.workspace.getConfiguration("wordcount");
 		let url = wcconfig.transapi ? wcconfig.transapi : "https://fanyi.baidu.com/transapi?from=auto&to=auto&query="
-		if(keyword) {
+		if(keyword && this._isValidKeyWord(keyword)) {
 			url = url + encodeURI(keyword)
 			WebRequest.get(url).then(resp => {
 				let rep = JSON.parse(resp.content);
@@ -101,6 +103,19 @@ class WordCounter {
 			});
 		}
 		return "失败了~~~~(>_<)~~~~"
+	}
+
+	// 判断选中的文本是否为合法的翻译素材，比如链接类，纯符号类等就不予考虑
+	public _isValidKeyWord(keyword: string): boolean {
+		if(keyword == null || keyword == "") {
+			return false;
+		}
+		if(keyword.startsWith("http")) {
+			return false;
+		}else if(isNumber(keyword)) {
+			return false;
+		}
+		return true;
 	}
     // 当插件禁用时
     dispose() {
