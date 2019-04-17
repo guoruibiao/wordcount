@@ -2,7 +2,7 @@
 	"name": "wordcount",
 	"displayName": "wordcount",
 	"description": "Just a tool for counting words and translate selected text.",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "guoruibiao",
 	"license": "MIT",
 	"icon": "favicon.ico",
