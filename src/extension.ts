@@ -60,7 +60,8 @@ class WordCounter {
         let selection = editor.selection
 		let text = editor.document.getText(selection)
 		
-		// 测试显示选中的文本
+        // 测试显示选中的文本
+        console.log("搞到了选中的：" + text);
 		this._translate(text);
 
        //if (doc.languageId === 'markdown') {
@@ -91,7 +92,7 @@ class WordCounter {
 	public _translate(keyword: string): string {
 		// 获取选中的文本
 		let wcconfig = vscode.workspace.getConfiguration("wordcount");
-		let url = wcconfig.transapi ? wcconfig.transapi : "https://fanyi.baidu.com/transapi?from=auto&to=auto&query="
+		let url = wcconfig.transapi ? wcconfig.transapi : "http://fanyi.youdao.com/translate?&doctype=json&type=AUTO&i=" 
 		if(keyword && this._isValidKeyWord(keyword)) {
 			url = url + encodeURI(keyword)
 			WebRequest.get(url).then(resp => {
