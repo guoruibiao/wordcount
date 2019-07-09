@@ -27,7 +27,7 @@ This extension contributes the following settings:
 
 Users appreciate release notes as you update your extension.
 
-### 0.0.4
+### 0.0.5
 change translate engine to youdao.
 
 ### 0.0.2
