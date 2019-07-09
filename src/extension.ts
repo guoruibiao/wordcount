@@ -92,7 +92,7 @@ class WordCounter {
 	public _translate(keyword: string): string {
 		// 获取选中的文本
 		let wcconfig = vscode.workspace.getConfiguration("wordcount");
-        let url = wcconfig.transapi ? wcconfig.transapi : "http://fanyi.youdao.com/translate?&doctype=json&type=AUTO&i=" 
+        let url = wcconfig.transapi ? wcconfig.transapi : "http://api.qingyunke.com/api.php?key=free&appid=0&msg=" 
         // console.log(url);
 		if(keyword && this._isValidKeyWord(keyword)) {
 			url = url + encodeURI(keyword)
@@ -101,8 +101,8 @@ class WordCounter {
                     console.log(resp.content);
                     // vscode.window.showInformationMessage(resp.content);
                     let rep = JSON.parse(resp.content);
-                    if(rep.translateResult && rep.translateResult[0] && rep.translateResult[0][0]) {
-                        let transret = rep.translateResult[0][0].tgt;
+                    if(rep.content) {
+                        let transret = rep.content;
                         this._statusBarItem.text = "[" + keyword + "]:" + transret;
                         // vscode.window.showInformationMessage("[" + keyword + "]:" + transret);
                         this._statusBarItem.show();

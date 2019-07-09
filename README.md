@@ -27,6 +27,9 @@ This extension contributes the following settings:
 
 Users appreciate release notes as you update your extension.
 
+### 0.0.6
+because of the frequency limit, change youdao to qingyunke.
+
 ### 0.0.5
 change translate engine to youdao.
 

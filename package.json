@@ -2,7 +2,7 @@
 	"name": "wordcount",
 	"displayName": "wordcount",
 	"description": "Just a tool for counting words and translate selected text.",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"publisher": "guoruibiao",
 	"license": "MIT",
 	"icon": "favicon.ico",
@@ -34,7 +34,7 @@
 			"properties": {
 				"wordcount.transapi": {
 					"type": "string",
-					"default": "http://fanyi.youdao.com/translate?&doctype=json&type=AUTO&i=",
+					"default": "http://api.qingyunke.com/api.php?key=free&appid=0&msg=",
 					"description": "auto translate api from youdao"
 				}
 			}
